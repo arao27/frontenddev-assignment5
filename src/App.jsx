@@ -1,44 +1,41 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductCard from "./components/ProductCard";
 import Footer from "./components/Footer";
+import CartItem from "./components/CartItem";
 
 function App() {
-  return (
-    <>
-      <Header storeName="ComponentCorner" />
+    const products = [
+        { id: 1, name: "Wireless Headphones", price: 99.99, image: "https://placehold.co/600x400", description: "Premium noise-cancelling headphones with 30-hour battery life" },
+        { id: 2, name: "Smart Watch", price: 249.99, image: "https://placehold.co/600x400", description: "Fitness tracker with heart rate monitor and GPS" },
+        { id: 3, name: "Bluetooth Speaker", price: 79.99, image: "https://placehold.co/600x400", description: "Portable waterproof speaker with 360-degree sound" },
+        { id: 4, name: "Laptop Stand", price: 49.99, image: "https://placehold.co/600x400", description: "Ergonomic aluminum stand for laptops and tablets" },
+        { id: 5, name: "Webcam", price: 129.99, image: "https://placehold.co/600x400", description: "4K webcam with auto-focus and noise reduction" },
+        { id: 6, name: "Mechanical Keyboard", price: 159.99, image: "https://placehold.co/600x400", description: "RGB backlit keyboard with custom switches" },
+    ];
 
-      <Hero
-        title="Welcome to ComponentCorner"
-        subtitle="Your one-stop shop for awesome tech gadgets"
-        ctaText="Shop Now"
-      />
+    const [cart, setCart] = useState([]);
 
-      <div className="product-grid">
-        <ProductCard
-          name="Wireless Headphones"
-          price="99.99"
-          image="https://placehold.co/600x400"
-          description="High-quality sound with noise cancellation."
-        />
-        <ProductCard
-          name="Smart Watch"
-          price="149.99"
-          image="https://placehold.co/600x400"
-          description="Track fitness, notifications, and more."
-        />
-        <ProductCard
-          name="Gaming Mouse"
-          price="59.99"
-          image="https://placehold.co/600x400"
-          description="Precision performance for serious gamers."
-        />
-      </div>
+    const addToCart = (product) =
+        setCart([...cart, product]);
+    };
 
-      <Footer storeName="ComponentCorner" email="support@componentcorner.com" />
-    </>
-  );
+    const removeFromCart = (id) =
+        setCart(cart.filter((item, index) = !== id));
+    };
+
+    const total = cart.reduce((sum, item) = + item.price, 0);
+
+    return (
+
+                {products.map((product) =
+                ))}
+
+                )}
+
+    );
 }
 
 export default App;
