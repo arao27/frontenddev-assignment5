@@ -1,43 +1,63 @@
+/* ProductCard.css */
+
+/* Card container */
 .product-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;                 /* ensures all text is black */
+  border: 1px solid #ccc;       /* subtle border */
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+  width: 300px;                 /* card width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
+/* Product image */
 .product-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 100%;                  /* image fills card width */
+  height: auto;                 /* maintain aspect ratio */
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
-.product-card .product-info {
-  padding: 15px;
+/* Product title */
+.product-card h3 {
+  margin: 0;
+  font-size: 1.4rem;            /* readable heading */
+  color: black;
 }
 
-.product-card .product-info h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
-  color: #333;
+/* Product description */
+.product-card p {
+  margin: 8px 0;
+  color: black;
+  font-size: 1rem;
 }
 
-.product-card .product-info p {
-  margin: 0 0 10px 0;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.product-card .product-info .price {
+/* Product price */
+.product-card .price {
   font-weight: bold;
-  color: #667eea;
+  color: black;
+  margin-top: 8px;
   font-size: 1.1rem;
+}
+
+/* Add to Cart button */
+.product-card button {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: #667eea;    /* button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-card button:hover {
+  background-color: #5a67d8;
 }
