@@ -1,4 +1,5 @@
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product, onAddToCart }) {
   return (
@@ -7,9 +8,16 @@ function ProductCard({ product, onAddToCart }) {
       <h3 className="product-name">{product.name}</h3>
       <p className="product-description">{product.description}</p>
       <p className="product-price">${product.price.toFixed(2)}</p>
-      <button className="add-to-cart-btn" onClick={() => onAddToCart(product)}>
+
+      {/* Add to cart button */}
+      <button className="add-to-cart-btn" onClick={onAddToCart}>
         Add to Cart
       </button>
+
+      {/* View Details link */}
+      <Link to={`/product/${product.id}`} className="view-details-link">
+        View Details
+      </Link>
     </div>
   );
 }

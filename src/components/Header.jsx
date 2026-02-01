@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header({ storeName, cartCount }) {
@@ -5,14 +6,16 @@ function Header({ storeName, cartCount }) {
     <header className="header">
       <h1>{storeName}</h1>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/about">About</Link> {/* optional route */}
+        <Link to="/contact">Contact</Link> {/* optional route */}
       </nav>
       <div className="cart-container">
-        <span className="cart-icon">🛒</span>
-        <span className="cart-count">{cartCount}</span>
+        <Link to="/cart">
+          <span className="cart-icon">🛒</span>
+          <span className="cart-count">{cartCount}</span>
+        </Link>
       </div>
     </header>
   );
